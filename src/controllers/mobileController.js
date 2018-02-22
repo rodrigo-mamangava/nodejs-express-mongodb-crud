@@ -49,6 +49,7 @@ export const getMobileById = (req, res) => {
 
     Mobile.findById(req.params.mobileId, (err, mobile)=> {
         if(err){
+            res.statusCode = 404;
             res.send(err);
         }
         res.json(mobile);
